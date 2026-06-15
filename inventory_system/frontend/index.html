@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envanter Yönetim Sistemi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>📦 Stok & Envanter Paneli</h1>
+            <button id="addBtn" class="btn primary-btn">+ Yeni Ürün Ekle</button>
+        </header>
+
+        <main>
+            <div class="table-container glass-panel">
+                <table id="inventoryTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ürün Adı</th>
+                            <th>Kategori</th>
+                            <th>Stok</th>
+                            <th>Fiyat (₺)</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Veriler JS ile buraya yüklenecek -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Form -->
+    <div id="productModal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Ürün Ekle</h2>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                <div class="form-group">
+                    <label for="name">Ürün Adı</label>
+                    <input type="text" id="name" required placeholder="Örn: Laptop">
+                </div>
+                <div class="form-group">
+                    <label for="category">Kategori</label>
+                    <input type="text" id="category" placeholder="Örn: Elektronik">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Stok Miktarı</label>
+                    <input type="number" id="quantity" required min="0" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="price">Birim Fiyatı</label>
+                    <input type="number" id="price" required min="0" step="0.01" placeholder="0.00">
+                </div>
+                <button type="submit" class="btn submit-btn">Kaydet</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
